@@ -9,12 +9,12 @@ RUN go mod tidy
 
 RUN go mod download && go mod verify
 
-COPY /time.go .
+COPY /main.go .
 
-RUN go build time.go
+RUN go build main.go
 
 EXPOSE 8080
 
-RUN chmod +x ./time.go
+RUN chmod +x ./main.go
 
-CMD ["./time"]
+CMD ["./main"]

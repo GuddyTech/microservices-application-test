@@ -9,12 +9,12 @@ RUN go mod tidy
 
 RUN go mod download && go mod verify
 
-COPY /main.go .
+COPY /chat.go .
 
-RUN go build main.go
+RUN go build chat.go
 
 EXPOSE 8080
 
-RUN chmod +x ./main.go
+RUN chmod +x ./chat.go
 
-CMD ["./main"]
+CMD ["./chat"]
